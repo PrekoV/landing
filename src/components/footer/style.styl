@@ -1,0 +1,47 @@
+.Footer
+    background-color #333333
+    height 100%
+    width 100%
+    .footer_wrapper
+        margin: 0 auto
+        padding: 30px 0
+        max-width: 1170px
+        display: flex
+        justify-content space-between
+        flex-wrap: wrap
+        .left
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            list-style none
+            .card:hover
+                background-color #ce4624
+            .card
+                display: flex
+                font-size: 28px
+                background-color: #dcdcdc
+                border-radius: 5px
+                justify-content: center
+                width: 50px
+                margin: 0 5px
+                align-items: center
+        .right
+            display: flex
+            list-style none
+            justify-content: flex-end
+            align-items: center
+            @media screen and (max-width 660px)
+                margin-top: 20px
+            .card:hover
+                background-color #ce4624
+                color: #fff
+            .card
+                display: flex
+                font-size: 34px
+                color: #a7a7a7
+                background-color: #fff
+                border-radius: 100%
+                justify-content: center
+                width: 45px
+                margin: 0 5px
+                align-items: center

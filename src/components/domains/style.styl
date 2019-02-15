@@ -1,0 +1,86 @@
+.domains
+    width 100%
+    background-color #ce4624
+    .domains_wrapper
+        margin: 0 auto
+        max-width 1170px
+        display flex
+        justify-content space-between
+        align-items center
+        padding: 15px
+        @media screen and (max-width: 900px)
+            flex-direction: column
+        .left
+            width 100%
+            @media screen and (max-width: 900px)
+                margin-bottom: 20px
+            .domain_input
+                color #878787
+                height 56px
+                border none
+                width 70%
+                border-radius 0px !important
+                text-indent 12px
+            .domain_select
+                color #878787
+                width 14%
+                height 56px
+                border none
+                border-left 1px solid #dadada
+                outline none
+                border-radius 0px !important
+            .go
+                background #000
+                color #fff
+                font-weight bold
+                font-size 18px
+                padding 16px 24px
+                border none 
+                outline none
+                @media screen and (max-width: 400px)
+                    padding 10px 15px
+                    font-size: 12px
+            .go:hover
+                cursor pointer
+        .right
+            display flex
+            align-items center
+            color: white
+            width: 100%
+            .title
+                padding 12px 0
+                font-size 21px
+                margin-left: 25px
+                margin-right: 10px
+                width 25%
+            .blocks
+                display flex
+                width: 70%
+                justify-content space-around
+                align-items center
+                @media screen and (max-width: 900px)
+                    width 60%
+                .domain:hover
+                    background-color #000
+                    color #fff
+                    cursor pointer
+                .domain
+                    width: 20%
+                    font-size 18px
+                    text-align center
+                    color #656565
+                    border-radius 4px
+                    background #fff
+                    height 62px
+                    display flex
+                    flex-direction column
+                    @media screen and (max-width: 400px)
+                        font-size: 12px
+                        height auto
+                    .name
+                        font-weight bold
+                        margin-top 5px
+                    .price
+                        font-size 15px
+                        @media screen and (max-width: 400px)
+                            font-size: 8px

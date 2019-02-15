@@ -1,0 +1,49 @@
+.Feedback
+    height 100%
+    width 100%
+    .section8_wrapper
+        margin 0 auto
+        max-width 1170px
+        .title
+            font-size 26px
+            text-align center
+            padding 70px 0
+        .feedback_container
+            display flex
+            justify-content: space-between
+            @media screen and (max-width 780px)
+                flex-direction: column
+                margin: 0 20px 0 auto
+            .feedback:hover
+                .user
+                    border-color #fff
+                .comment
+                    background-color #ce4624
+                    .comment_text
+                        color #fff
+                    .under_text
+                        color #fff
+            .feedback
+                margin-bottom: 50px
+                .user
+                    border 4px solid #ce4624
+                    padding 0
+                    border-radius 100%
+                    width 100px
+                    height 100px
+                    margin-left 25px
+                    overflow hidden
+                .comment
+                    border 1px solid #ce4624
+                    margin-top: -40px
+                    margin-left 70px
+                    .comment_text
+                        color #878787
+                        font-size 16px
+                        line-height 22px  
+                        padding 40px 46px 0px 46px
+                        text-align justify
+                    .under_text
+                        padding 10px 42px 20px
+                        color #161616
+                        font-size 16px

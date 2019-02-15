@@ -1,0 +1,149 @@
+.slider
+        width 100%
+        height 100%
+        // background-image url(./images/slider1.jpg)
+        background-repeat no-repeat
+        background-size cover
+        .wrapper_main_section1
+            .header
+                height 100%
+                width 100%
+                background-color #1a1816
+                .header_wrapper
+                    margin 0 auto
+                    max-width 1180px
+                    display flex
+                    justify-content space-between
+                    align-items center
+                    .contacts
+                        list-style none
+                        display flex
+                        color #878787
+                        font-size 15px
+                        justify-content space-between
+                        align-items: center
+                        @media screen and (max-width: 900px)
+                            flex-direction: column
+                        .mail:hover
+                            color #ce4624
+                            cursor pointer
+                        .mail:before
+                            content: "✉"
+                            padding-right: 10px
+                        .mail
+                            padding-right 10px
+                        .tel:before
+                            content "✆"
+                            padding-right: 10px
+                    .authorization
+                        .login
+                            background-color transparent
+                            border none 
+                            color #878787
+                            border-right solid .5px #878787
+                            padding 10px 20px
+                            text-align center
+                            font-size 15px
+                        :hover
+                            background-color #ce4624
+                            color: white
+                            cursor pointer
+                        .register
+                            background-color transparent
+                            border none 
+                            color #878787
+                            text-align center
+                            font-size 15px
+                            padding 13px 20px
+                        :hover
+                            background-color #ce4624
+                            color: white
+                            cursor pointer
+            .section1_wrapper
+                height 100%
+                width 100%
+                .navigation
+                    background-color rgba(206, 70, 36, 0.5)
+                    transition: .5s
+                    .navigation_container
+                        max-width 1150px
+                        margin 0 auto
+                        display flex
+                        justify-content space-between
+                        align-items center
+                        @media screen and (max-width: 900px)
+                            flex-direction: column
+                            align-items: flex-start
+                            padding: 10px
+                        .menu
+                            list-style none
+                            display flex
+                            flex-wrap: wrap
+                            align-items center
+                            justify-content space-between 
+                            color white
+                            @media screen and (max-width: 400px)
+                                display: none
+                            // @media screen and (max-width: 900px)
+                            //     flex-direction: column
+                            // .item:hover
+                            //     display: flex
+                            //     flex-direction: column
+                            //     .hereis
+                            //         display: block
+                            //         padding-top: 20px
+                            //         background-color #fff
+                            //         padding: 10px 15px;
+                            //         display: block;
+                            //         font-size: 13px
+                            //         color black
+                            .item
+                                display flex
+                                align-items center
+                                padding 40px 20px
+                                font-size 16px
+                                @media screen and (max-width: 900px)
+                                    font-size: 12px
+                            .item:hover
+                                cursor pointer
+                            .item_scroll
+                                padding: 20px 20px
+                .scroll
+                    width 100%
+                    position: fixed
+                    background-color rgb(0, 0, 0)
+                    transition: .5s
+                    top 0
+                .main
+                    width 100%
+                    display flex
+                    justify-content center
+                    color white
+                    align-items center
+                    .main_container
+                        text-align center
+                        width 63%
+                        margin: 114px auto
+                        .title
+                            font-size 60px
+                            display block
+                        .info
+                            margin-top 40px
+                            margin-bottom 10px
+                            display block
+                            font-size 16px
+                        .order
+                            color #595959
+                            background-color white
+                            padding 8px 36px
+                            margin-top 40px
+                            font-size 15px
+                            border-radius 2px
+                            text-transform uppercase
+                            line-height 28px
+                            outline none 
+                            border none
+                        .order:hover
+                            cursor pointer
+                .main_scroll
+                    margin-top: 102px
