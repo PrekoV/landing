@@ -135,11 +135,11 @@ router.post('/download', uploads.single('file'), function (req, res) {
     let file = req.file
     let dataFile = {
         icon: `${url}uploads/${file.filename}`,
-        title: "Domain Search",
-        discription: "More recently with desktop publishing software like Aldus PageMaker including versions."
+        title: req.body.title,
+        discription: req.body.discription
     }
     data.hostingSolutions.push(dataFile)
-    res.status(200).send(data.hostingSolutions)
+    res.status(200).send(data.hostingSolutions[data.hostingSolutions.length - 1])
     //console.log('post', data.subscribeOnNews)
 })
 

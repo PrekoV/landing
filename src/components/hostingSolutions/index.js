@@ -6,12 +6,19 @@ class HostingSolutions extends Component {
 
     state = {
         file: '',
-        hostingSolutions: []
+        hostingSolutions: [],
+        discription: '',
+        title: '',
+        isFileUploaded: false
     }
 
     setUpData = (e) => {
         switch (e.target.name) {
-            case 'file': this.setState({ [e.target.name]: e.target.files[0] })
+            case 'file':
+                this.setState({
+                    [e.target.name]: e.target.files[0],
+                    isFileUploaded: true
+                })
                 break
             default: this.setState({ [e.target.name]: e.target.value })
         }
@@ -19,29 +26,41 @@ class HostingSolutions extends Component {
 
     sendFile = e => {
         e.preventDefault()
-        console.log("hhhh")
-        let formData = new FormData();
-        formData.append('file', this.state.file);
-        API('POST', 'download', formData, true).then(result => {
-            console.log('RESULT', result)
-            let a = [...this.state.hostingSolutions]
-            a.concat(result)
-            this.setState({ hostingSolutions: a })
-        })
+        if (this.state.file !== '' && this.state.discription !== '' && this.state.title !== '') {
+            let formData = new FormData();
+            formData.append('discription', this.state.discription);
+            formData.append('title', this.state.title);
+            formData.append('file', this.state.file);
+            API('POST', 'download', formData, true).then(result => {
+                let a = this.state.hostingSolutions
+                a.concat(result)
+                console.log(a.concat(result))
+                this.setState({
+                    hostingSolutions: a.concat(result),
+                    isFileUploaded: false,
+                    title: '',
+                    discription: ''
+                })
+            })
+            console.log(this.state.hostingSolutions)
+        } else {
+            this.setState({
+                title: 'You have to input title!',
+                discription: 'You have to input discription!'
+            })
+        }
+
     }
 
     componentDidMount = () => {
         API('GET', 'data').then(data => {
-            console.log(data)
             this.setState({
                 hostingSolutions: data.hostingSolutions
             })
-        }
-        )
+        })
     }
 
     render() {
-        console.log(this.state.array)
         return (
             <div className="HostingSolutions">
                 <div className="section2_wrapper">
@@ -62,22 +81,19 @@ class HostingSolutions extends Component {
                             })
                         }
                     </div>
-
-                    <div>
-                        {
-                            this.state.hostingSolutions.map((item, id) => {
-                                //console.log(item[0].icon)
-                                return (
-                                    <div key={id}>
-                                        <img src={item.icon} alt="" />
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                    <form enctype="multipart/form-data" onSubmit={this.sendFile}>
-                        <input type="file" name="file" onChange={this.setUpData} />
-                        <button >SEND FILE</button>
+                    <form encType="multipart/form-data" onSubmit={this.sendFile}>
+                        Offer your oun Hosting Solution!
+                        <input type="text" placeholder="input title" name="title" onChange={this.setUpData} value={this.state.title} />
+                        <input type="text" placeholder="input discription" name="discription" onChange={this.setUpData} value={this.state.discription} />
+                        <div className="file_label_wrapper">
+                            <input type="file" id="file" name="file" onChange={this.setUpData} style={{ display: 'none' }} />
+                            <label id="file_label" htmlFor="file" >
+                                {this.state.isFileUploaded ?
+                                    'Your file is ' + this.state.file.name
+                                    : 'Click here to upload the file'}
+                            </label>
+                            <button >SEND FILE</button>
+                        </div>
                     </form>
                 </div>
             </div>

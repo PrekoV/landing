@@ -18,7 +18,7 @@ class App extends Component {
 	state = {
 		slider: { contacts: { tel: '', email: '' }, menu: [], wallpaper: '', logo: '' },
 		domains: [],
-		hostingSolutions: [],
+		//hostingSolutions: [],
 		getStarted: { url: '', wallpaper: '' },
 		signingUp: [],
 		prices: [],
@@ -36,7 +36,7 @@ class App extends Component {
 			this.setState({
 				slider: data.slider,
 				domains: data.domains,
-				hostingSolutions: data.hostingSolutions,
+				// hostingSolutions: data.hostingSolutions,
 				getStarted: data.getStarted,
 				signingUp: data.signingUp,
 				prices: data.prices,
@@ -60,7 +60,7 @@ class App extends Component {
 
 				<Slider slider={slider} />
 				<Domain domains={domains} />
-				<HostingSolutions hostingSolutions={hostingSolutions} />
+				<HostingSolutions /> {/*hostingSolutions={hostingSolutions}*/}
 				<GetStarted getStarted={getStarted} />
 				<SigningUp signingUp={signingUp} />
 				<Prices prices={prices} />

@@ -41,18 +41,62 @@
                 cursor pointer
             .square
                 border: 1px solid #ddd
-                max-width: 260px
+                width: 260px
+                max-height: 240px
+                min-height: 220px
                 text-align center
                 padding-top 20px
                 margin-bottom: 40px
                 padding-bottom: 15px
+                img 
+                    max-width: 70px
+                    max-height: 71px
                 .square_name
                     padding-top: 15px
                     text-align center
                     font-weight bold
                     font-size 22px
                     color: #ce4624
+                    overflow: hidden;
+                    text-overflow: ellipsis
                 .square_text
                     color #878787
                     padding 10px 10px
                     font-size: 14px
+                    overflow: hidden;
+                    text-overflow: ellipsis
+        form
+            width: 100%
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            input
+                height: 50px
+                width: 70%
+                text-indent: 15px
+                border-radius: 4px 0px 0px 4px
+                border: solid 1px  black
+                margin: 5px
+            button
+                height: 30px
+                padding: 0 7px
+                border-radius: 0px 4px 4px 0px
+                border: none
+                color: #fff
+                background-color black
+                text-transform: uppercase
+                font-size: 16px
+                font-weight: bold
+                cursor pointer
+            .file_label_wrapper
+                display: flex
+                justify-content: space-between
+                width: 70%
+                align-items: center
+                #file_label
+                    border: solid 1px #fff
+                    padding: 5px 10px
+                    cursor pointer
+                    color: #fff
+                    background-color #ce4624

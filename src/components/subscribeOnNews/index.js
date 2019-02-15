@@ -1,40 +1,40 @@
 import React, { Component } from 'react';
-import API from '../../api/api';
+// import API from '../../api/api';
 
 class SubscribeOnNews extends Component {
 
-    state = {
-        email: '',
-        file: []
-    }
+    // state = {
+    //     email: '',
+    //     file: []
+    // }
 
-    setUpData = (e) => {
-        switch (e.target.name) {
-            case 'file': this.setState({ [e.target.name]: e.target.files[0] })
-                break
-            default: this.setState({ [e.target.name]: e.target.value })
-        }
-    }
+    // setUpData = (e) => {
+    //     switch (e.target.name) {
+    //         case 'file': this.setState({ [e.target.name]: e.target.files[0] })
+    //             break
+    //         default: this.setState({ [e.target.name]: e.target.value })
+    //     }
+    // }
 
-    submitInput = e => {
-        e.preventDefault()
-        console.log("button")
-        this.setState({ email: '' })
-        API('POST', 'data', { email: this.state.email }).then(res => {
-            this.setState({ emailArray: res })
-        })
-    }
+    // submitInput = e => {
+    //     e.preventDefault()
+    //     console.log("button")
+    //     this.setState({ email: '' })
+    //     API('POST', 'data', { email: this.state.email }).then(res => {
+    //         this.setState({ emailArray: res })
+    //     })
+    // }
 
-    sendFile = e => {
-        e.preventDefault()
-        let formData = new FormData();
-        formData.append('file', this.state.file);
-        //console.log(this.state.file)
-        API('POST', 'download', formData, true).then(result => {
-            console.log('RESULT', result)
-            //this.setState({ file: file.concat(result) })
-        })
-    }
+    // sendFile = e => {
+    //     e.preventDefault()
+    //     let formData = new FormData();
+    //     formData.append('file', this.state.file);
+    //     //console.log(this.state.file)
+    //     API('POST', 'download', formData, true).then(result => {
+    //         console.log('RESULT', result)
+    //         //this.setState({ file: file.concat(result) })
+    //     })
+    // }
 
     render() {
         //console.log(this.state.email)
@@ -43,13 +43,6 @@ class SubscribeOnNews extends Component {
         return (
             <div className="SubscribeOnNews">
                 <div className="section9_wrapper">
-                    {/* {
-                        this.state.emailArray.map(item => {
-                            return (
-                                <div>{item}</div>
-                            )
-                        })
-                    } */}
                     <form className="form_wrapper" action="">
                         <div className="title">SIGN UP TO OUR NEWSLETTER</div>
                         <div className="input_container">
@@ -58,15 +51,13 @@ class SubscribeOnNews extends Component {
                                 type="email"
                                 name="email"
                                 placeholder="Enter Your Email Address"
-                                onChange={this.setUpData}
-                                value={this.state.email}
+                            // onChange={this.setUpData}
+                            // value={this.state.email}
                             />
-                            <button className="submit" onClick={this.submitInput}>SEND</button>
+                            <button className="submit"
+                            // onClick={this.submitInput}
+                            >SEND</button>
                         </div>
-                    </form>
-                    <form enctype="multipart/form-data" onSubmit={this.sendFile}>
-                        <input type="file" name="file" onChange={this.setUpData} />
-                        <button >SEND FILE</button>
                     </form>
                 </div>
             </div>
